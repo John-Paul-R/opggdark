@@ -1,0 +1,650 @@
+/* ==UserStyle==
+@name         OP.GG Dark Mode
+@version      1.0.2
+@namespace    John-Paul-R
+@preprocessor uso
+@author       John-Paul-R
+@updateURL https://www.jpcode.dev/
+@var text backgroundImg "Background image URL: two double quotes for dndbeyond background choice, url for custom or blank for background color" ""
+@var color background "Background Color" "#121212"
+@var color sheetColor "Sheet Color" #000
+@var color fontColor "Font Color" #ddd
+@var color borderColor "Border Color" #114
+@var color highlightColor "Highlight Color" #59d
+@var color scrollbarColor "Scrollbar Color" #114
+@var color rollColor "Rollable Items Color" #59d
+@var color rollCalcColor "Roll History Background Color" #030f1aea
+@var text filter "Icons filter - for dark backgrounds: invert(100%) for light background: none" "invert(100%)"
+@var text zindex "Z-index for dice: above 60001 for above results; below 60001 for below results" "60000"
+
+
+
+==/UserStyle== */
+
+@-moz-document regexp("https:\\/\\/.+\\.op\\.gg.+") {
+/* AllPages */
+/*  Navbar */
+    .l-menu,
+    .l-wrap .gnb .opgg-header__logo,
+    .l-wrap .gnb .navi__item--default {
+        background-color: #293856;
+    }
+/*     Search */
+    .gnb-list-item__search .gnb-list-item__select {
+        background: hsl(221, 50%, 15%);
+        color: hsl(221, 65%, 80%);
+    }
+    .gnb-list-item__search,
+    .gnb-list-item__search .gnb-list-item__list,
+    .summoner-search-history__list{
+        background: #202020;
+    }
+    .gnb-list-item__search input,
+    .gnb-list-item__search .gnb-list-item__list .gnb-list-item__option{
+        color: #d3d3d3;
+    }
+    .summoner-search-history__title li.active,
+    .RecentSummonerListWrap{
+        background: #202020;
+        color: #d3d3d3;
+    }
+    .gnb-list-item__search .gnb-list-item__list .gnb-list-item__option:hover {
+        background: #282828;
+    }
+    .summoner-search-history__title li {
+        background: #282828;
+        color: #b1b1b1;
+    }
+    .summoner-search-history__list .Item>a:hover {
+        color: #d3d3d3;
+    }
+    .summoner-search-history__list .Item>a {
+        color: #b1b1b1;
+    }
+/*     Region/Language-Settings */
+    .modal {
+        border-color: #454545;
+        background-color: #282828;
+    }
+    .modal * {
+        border-color: #454545;
+    }
+    .modal-header {
+        background: #202020;
+        border-color: #454545;
+    }
+    .modal-footer {
+        background-color: #202020
+    }
+    .modal__title,
+    .setting-status__label{
+        color: #d3d3d3;   
+    }
+    li.setting-list__item--active a {
+        color: #4a90e2;
+    }
+    .setting-list__item a {
+        color: #b1b1b1;
+    }
+/*     Footer */
+    .l-wrap--index .footer,
+    .footer {
+        color: #a1a1a1;
+    }
+}
+
+@-moz-document regexp("https:\\/\\/.+\\.op\\.gg.+") {
+/*  Hoempage */
+    .l-wrap--index {
+        background: #293856;
+    }
+    .first-time-user,
+    .summoner-search-form{
+        background: #202020;
+    }
+    .first-time-user__content {
+        background: #282828;
+    }
+    .first-time-user__title,
+    .first-time-user__item h1,
+    .summoner-search-form__text{
+        color: #d3d3d3;
+    }
+    .first-time-user,
+    .first-time-user * {
+        border-color: #454545
+    }
+    
+}
+
+@-moz-document regexp("https:\\/\\/.+\\.op\\.gg\\/summoner\\/userName=") {
+/*     SummonerBlank */
+    .SummonerLayout.tabWrap,
+    .l-container,
+    .l-wrap.l-wrap--summoner {
+        background-color: /*[[background]]*/;
+    }
+    .SummonerBlankLayout>.Header>.Title {
+        color: #d3d3d3;
+    }
+    .SummonerBlankLayout>.Content>.List>.Item {
+        color: #b1b1b1;
+    }
+}
+@-moz-document regexp("https:\\/\\/.+\\.op\\.gg\\/summoner\\/userName=.+") {
+
+/*     Summoner */
+/* Background */
+    .SummonerLayout.tabWrap,
+    .l-container{
+        background-color: /*[[background]]*/;
+    }
+    .SummonerLayout>.Menu>.MenuList>.Item.inGame>a {
+        background-color: #282828;
+        color: hsl(202, 48%, 73%);
+    }
+    .SummonerLayout>.Menu>.MenuList>.Item.inGame>a:hover {
+        background-color: #202020;
+    }
+    .SummonerLayout>.Menu>.MenuList>.Item.inGame.active>a {
+        background-color: /*[[background]]*/
+    }
+    .SpectatorError {
+        background-color: #282828;
+        border-color: #333333;
+    }
+    .SpectatorError h2 {
+        color: #d3d3d3;
+    }
+    .SpectatorError p {
+        color: #b1b1b1;
+    }
+
+    /* Elements */
+    .Box {
+    background-color: #303030 !important;
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+    }
+    .Box,
+    .sub-tier {
+        border: 1px solid hsl(180, 5%, 35%);
+        box-shadow: 0 1px hsl(180, 4%, 28%);
+    }
+    .opscore-banner,
+    .Button.White{
+        border: 1px solid hsl(180, 5%, 35%);
+    }
+    .ChampionBox {
+        border-bottom: 1px solid hsl(180, 5%, 28%);
+    }
+    .GameAverageStats tr>.MostChampion,
+    .GameAverageStats tr>.PositionStats,
+    .GameAverageStats tr>.Title,
+    .GameListContainer>.Header>.Navigation>.Actions>.Action>.ChampionMatchSearchWrap,
+    .Box>.Tab>.TabList>.Item{
+        border-left: 1px solid hsl(180, 5%, 28%);
+    }
+    .ChampionWinRatioBox, .PositionWinRatioBox,
+    .ChampionStatsTable>.Body>.Row>.Cell,
+    .Box>.Navigation,
+    .ChampionStatsTable>.Header>.Row>.HeaderCell{
+        border-bottom: 1px solid hsl(180, 5%, 28%);
+    }
+    .Box>.Title {
+        border-bottom: 1px solid hsl(180, 5%, 35%);
+    }
+    .SummonerLayout>.Header>.PastRank>.PastRankList>.Item {
+        background-color: #282828;
+        color: #d3d3d3;
+        border-color: #454545;
+    }
+
+    .Button.SemiRound.White,
+    .SummonerRatingMedium,
+    .sub-tier,
+    .Item.tabHeader,
+    .Header.Box,
+    #right_search_champion,
+    .Input,
+    .opscore-Banner__content {
+        background-color: #282828 !important;
+    }
+    .Button.SemiRound.White {
+    color: #d0d0d0;
+    }
+
+    .SummonerLayout>.Header>.Profile>.Information>.Name,
+    .ChampionInfo>.ChampionName>a,
+    .Box>.Tab>.TabList>.Item.active,
+    .Box>.Tab>.TabList>.Item:hover,
+    .Box>.Navigation .List>.Item a.Link:hover,
+    .SummonerRatingMedium>.TierRankInfo>.TierInfo>.LeaguePoints,
+    .GameAverageStats tr>.KDA>.KDARatio>.KDARatio,
+    .GameAverageStats tr>.MostChampion ul li .Name,
+    .GameAverageStats tr>.PositionStats>ul>li .PositionStatContent .Name,
+    .GameAverageStats tr>.PositionStats>ul>li .PositionStatContent .WinRatio span,
+    .SpectateSummoner>.Box>.Title,
+    .SpectateSummoner>.Box>.Title>small,
+    .SpectateSummoner>.Box>.Content>.Table>.Body>.Row>.Cell.SummonerName>.SummonerName,
+    .SpectateSummoner>.Box>.Content>.Table>.Header>.Row>.HeaderCell{
+        color: #d3d3d3 !important;
+    }
+    
+    .Box>.Tab>.TabList>.Item,
+    .Box>.Navigation .List>.Item a.Link,
+    .SummonerRatingMedium,
+    .GameAverageStats tr>.Title,
+    .GameAverageStats tr>.Summary .WinRatioGraph .Text,
+    .GameAverageStats tr>.MostChampion ul li div.WonLose,
+    .GameAverageStats tr>.PositionStats>ul>li .PositionStatContent .WinRatio,
+    .GameAverageStats tr>.KDA>.KDA>.Kill, .GameAverageStats tr>.KDA>.KDA>.Assist,
+    .GameItem>.Content>.KDA>.KDA>.Kill, .GameItem>.Content>.KDA>.KDA>.Assist,
+    .SummonerLayout>.Header>.Profile>.Information>.Rank>.LadderRank>.Link,
+    .GameAverageStats tr>.MostChampion ul li .KDA,
+    .MostChampionContent>.MoreButton>.Action,
+    .GameMoreButton>.Button,
+    .GameItem>.Content>.Stats>.MMR b,
+    .GameItem>.Content>.GameStats>.GameType,
+    .SpectateSummoner>.Box>.Content>.Table>.Body>.Row>.Cell.CurrentSeasonTierRank,
+    .SpectateSummoner>.Box>.Content>.Table>.Body>.Row>.Cell.RuneMastery>.Button{
+        color: #b1b1b1;
+    }
+
+    .item.tabHeader.active,
+    .Content.tabItems,
+    .ChampionWinRatioBox,
+    .HeaderCell,
+    .GameAverageStats,
+    .Message,
+    .GameDetail {
+    background-color: #282828 !important;
+    }   
+    .SummonerLayout>.Menu>.MenuList>.Item>a {
+        background-color: #282828;
+        color: #d3d3d3;
+        border: 1px solid hsl(180, 5%, 35%);
+    }
+    .SummonerLayout>.Menu>.MenuList>.Item>a:hover {
+        background-color: #121212;
+        color: #d3d3d3;
+    }
+    .SummonerLayout>.Menu>.MenuList>.Item.active>a {
+        background-color: /*[[background]]*/;
+        color: #d3d3d3;
+        border: 1px solid hsl(180, 5%, 35%);
+        border-bottom-color: /*[[background]]*/
+    }
+    .SummonerLayout>.Menu,
+    .Box>.Tab>.TabList>.Item{
+        border-bottom: 1px solid hsl(180, 5%, 35%);
+    }
+    .Box>.Tab>.TabList>.Item.active {
+        border-bottom-color: #282828;
+    }
+
+    .GameItem.Lose .Content.tabItem.MatchDetailContent-overview,
+    .GameItem.Lose .Content,
+    .GameItem.Lose>.Content>.StatsButton{
+        background-color: hsl(0, 33%, 16%) !important;
+        border-color: hsl(0, 33%, 35%) !important;
+    }
+    .GameItem.Win .Content.tabItem.MatchDetailContent-overview,
+    .GameItem.Win .Content,
+    .GameItem.Win>.Content>.StatsButton{
+        background-color: hsl(231, 33%, 16%) !important;
+        border-color: hsl(231, 33%, 35%) !important;
+    }
+    .GameItem.Lose.Remake .Content.tabItem.MatchDetailContent-overview,
+    .GameItem.Lose.Remake .Content {
+    background-color: #343434 !important;
+
+    }
+
+    .ChampionStatsTable>.Body>.Row.TopRanker {
+        background-color: #282828;
+    }
+    .Content.tabItems tr {
+        background-color: #202020;
+    }
+    
+    .SummonersMostGameTable>.Body>.Row.Odd>.Cell {
+        background-color: #303030;
+    }
+    .SummonersMostGameTable>.Body>.Row>.Cell {
+        background-color: #2a2a2a;
+    }
+    
+    .ChampionStatsTable>.Body>.Row>.Cell.ChampionName>a,
+    .ChampionStatsTable>.Body>.Row>.Cell.ChampionName,
+    .ChampionStatsTable>.Body>.Row>.Cell {
+    color: #999;
+    }
+    .GameDetailTable>.Header {
+        border-color: #454545;
+    }
+
+    .Box,
+    div.GameItem>.Content>.GameStats,
+    div.GameItem>.Content>.GameSettingInfo>.ChampionName a,
+    div.GameItem>.Content>.Stats,
+    div.GameItem>.Content>.FollowPlayers.Names>.Team>.Summoner>.SummonerName {
+    color: #888 !important;
+    }
+    div.GameItem>.Content>.KDA>.KDARatio .KDARatio,
+    div.GameItem>.Content b,
+    div.GameItem>.Content>.FollowPlayers.Names>.Team>.Summoner.Requester>.SummonerName>.Link,
+    div.GameItem>.Content>.Items .Trinket {
+    color: #bbb;
+    }
+
+    .OPScore.Text,
+    .Name,
+    .KDA .KDARatio,
+    .KDA.normal,
+    .Box .Title
+    {
+    color: #888;
+    }
+    .SpectateSummoner>.Box>.Content>.Table>.Body>.Row:nth-child(even)  {
+    background-color: #434343;
+    }
+    .SpectateSummoner>.Box>.Content>.Table>.Body>.Row:nth-child(odd)  {
+    background-color: #333333;
+    }
+
+/*     Game Stats Dropdown */
+    .GameDetailTable.Result-LOSE>.Content>.Row.isRequester {
+        background-color: hsl(0, 33%, 25%);
+
+    }
+    .GameDetailTable.Result-WIN>.Content>.Row.isRequester {
+        background-color: hsl(231, 33%, 25%);
+
+    }
+    .GameDetailTable>.Content>.Row>.Cell.SummonerName>.Link,
+    .GameDetailTable>.Content>.Row>.Cell.Tier, 
+    .GameDetailTable>.Content>.Row>.Cell.OPScore>.Text,
+    .GameDetailTable>.Content>.Row>.Cell.KDA>.KDA,
+    .GameDetailTable>.Content>.Row>.Cell.Damage>.ChampionDamage,
+    .GameDetailTable>.Content>.Row>.Cell.Ward,
+    .GameDetailTable>.Content>.Row>.Cell.CS>.CS,
+    .MatchBuild>.ItemBuild>.List>.Item>.Time,
+    .GameItem>.Content>.KDA>.KDARatio,
+    .ChampionStatsTable>.Body>.Row>.Cell.RatioGraph>.WinRatioGraph>.WinRatio,
+    .ChampionStatsTable>.Body>.Row>.Cell.Value{
+        color: #b1b1b1;
+    }
+    .GameDetailTable>.Content>.Row>.Cell.CS,
+    .GameDetailTable>.Content>.Row>.Cell.KDA>.KDARatio,
+    .GameDetailTable>.Header>.Row>.HeaderCell,
+    .MatchAnalysisListItemContent h4,
+    .MatchBuild>.SkillBuild>.Content>.SideContent>.Item>.HotKey,
+    .MatchBuild>.SkillBuild>.Content>.RealContent .SkillBuildTable>.Content>.Row>.Cell.Label,
+    .perk-page__title-container .perk-page__title,
+    .SummonersMostGameTable>.Body>.Row>.Cell.SummonerName>.Link,
+    .Box>.Title,
+    .sub-tier__league-point,
+    div.GameItem>.Content>.KDA>.KDARatio .KDARatio, div.GameItem>.Content b, div.GameItem>.Content>.FollowPlayers.Names>.Team>.Summoner.Requester>.SummonerName>.Link, div.GameItem>.Content>.Items .Trinket,
+    .ChampionStatsTable>.Body>.Row>.Cell.KDA>.KDA,
+    .ChampionStatsTable>.Body>.Row>.Cell.ChampionName>a, .ChampionStatsTable>.Body>.Row>.Cell.ChampionName, .ChampionStatsTable>.Body>.Row>.Cell,
+    .ChampionStatsTable>.Header>.Row>.HeaderCell,
+    .opscore-banner__header{
+        color: #d3d3d3;
+    }
+    .opscore-banner__content {
+        background-color: #282828;
+        color: #d3d3d3;
+    }
+    .opscore-banner__footer {
+        background-color: #232323;
+        color: #b1b1b1;
+    }
+    .GameDetailTable>.Content>.Row>.Cell.Items>.Item>.noItem {
+        background: #454545;
+    }
+/*     .GameDetailTableWrap>.Summary {} */
+    
+}
+
+@-moz-document regexp("https:\\/\\/.+\\.op\\.gg\\/(champion|aram|urf)\\/statistics") {
+/*     ChampionList */
+    .l-wrap.l-wrap--champion,
+    .l-container{
+        background-color: /*[[background]]*/;
+    }
+    
+    /* Elements */
+    .champion-index-trend-header,
+    .champion-list-filter {
+        background-color: #202020;
+    }
+    .l-champion-index-content .l-champion-index-content--main,
+    .champion-index-trend-content,
+    .champion-index-trend-position__item{
+        background-color: #282828;
+    }
+
+/*     Champion Stats Table */
+    .champion-index-table__cell:first-child,
+    .champion-index-table__cell,
+    .champion-index-table__cell:last-child,
+    .l-champion-index-content .l-champion-index-content--side,
+    .l-champion-index-content .l-champion-index-content--main,
+    .champion-list-filter,
+    .champion-index-trend-header{
+        border-color: #565656;
+    }
+    .champion-index-table__cell,
+    .champion-index-trend-position__item.active a,
+    .champion-list-filter__keyword input{
+        background-color: #303030;
+    }
+    .champion-index-trend-position__item {
+        border-color: #454545;
+    }
+
+    
+    .Button.SemiRound.White {
+    color: #d0d0d0;
+    }
+
+    .champion-index__champion-item__name,
+    .champion-index-table__name {
+        color: #d3d3d3 !important;
+    }
+    
+    .champion-list-filter__type__item a:hover,
+    .champion-index-trend-header__filter a:hover,
+    .champion-index-trend-position__item.active a{
+        color: #d3d3d3;
+    }
+    .GameItem>.Content>.GameStats>.GameType,
+    .champion-index__version,
+    .champion-list-filter__type__item a,
+    .champion-index-trend-header__filter a,
+    .champion-index-table__header,
+    .champion-list-filter__keyword input{
+        color: #b1b1b1;
+    }
+    .champion-list-filter__type__item--active a,
+    .champion-list-filter__type__item--active a:hover {
+        color: #4990e2;
+    }
+
+}
+
+@-moz-document regexp("https:\\/\\/.+\\.op\\.gg\\/multi\\/query=.*") {
+/*     MultiQuery */
+    .l-container {
+        background-color: /*[[background]]*/;
+    }
+    
+
+    /* Navbar */
+    .l-menu,
+    .l-wrap .gnb .opgg-header__logo,
+    .l-wrap .gnb .navi__item--default,
+    .MultiSearchLayout>.Header>.MultiSearchInputBox>.FormItem>.ButtonBox>.SearchButton,
+    .multi2__item button.prev-seasons__btn--active{
+        background-color: #293856;
+    }
+
+    /* Elements */
+    .multi2__box,
+    .MultiSearchLayout>.Header{
+        background-color: #202020;
+    }
+    .multi2 .most-champions, .multi2 .recent-champions,
+    .multi2__recent-champion,
+    .MultiSearchLayout>.Header>.MultiSearchInputBox,
+    .MultiSearchLayout>.Header>.MultiSearchInputBox>.FormItem>.TextArea{
+        background-color: #282828;
+    }
+    .multi2__item .prev-seasons__btn {
+        background-color: #454545;
+        color: #d3d3d3;
+    }
+    .multi2__item button.prev-seasons__btn--active {
+        color: #fff;
+    }
+
+    .multi2__item .summoner-summary .summoner-name .name{
+        color: hsl(206, 26%, 90%);
+    }
+    .multi2__item .summoner-summary .lp {
+        color: hsl(206, 26%, 85%);
+    }
+    .champion-index-table__cell {
+        background-color: #303030;
+    }
+    .multi2 .recent-matches .recent-games__item .is-win--false{
+        background-color: hsl(0, 33%, 25%) !important;
+        color: hsl(0, 33%, 80%) !important;
+    }
+    .multi2 .recent-matches .recent-games__item .is-win--true{
+        background-color: hsl(231, 33%, 25%) !important;
+        color: hsl(231, 33%, 80%) !important;
+    }
+    .multi2 .recent-matches .recent-games__item .remake{
+        background-color: hsl(231, 0%, 25%) !important;
+        color: hsl(231, 0%, 80%) !important;
+    }
+    
+    .MultiSearchLayout>.Header>.MultiSearchInputBox>.FormItem>.TextArea {
+    color: #d0d0d0;
+    }
+
+    .champion-index__champion-item__name,
+    .champion-index-table__name,
+    .multi2 .recent-matches .title,
+    .multi2__box>.content .content-title{
+        color: #d3d3d3!important;
+    }
+    .multi2__box>.content .content-subtitle {
+        color: #b1b1b1;
+    }
+    
+/*     Images */
+/*     .multi2 .recent-matches .positions .position__icon--TOP {
+        filter: invert()
+    } */
+    
+/*      Borders */
+    .multi2__item {
+        border-right: 1px solid #454545;
+    }
+    .multi2 .recent-matches,
+    .multi2 .most-champions, .multi2 .recent-champions,
+    .multi2__recent-champion,
+    .MultiSearchLayout>.Header>.MultiSearchInputBox>.FormItem>.ButtonBox{
+        border-top: 1px solid #454545;
+    }
+    .multi2 .recent-matches .positions .position__info .role-rate,
+    .multi2 .recent-matches .recent-games__item .time-stamp,
+    .multi2 .most-champions__stats .kda, .multi2 .recent-champions__stats .kda,
+    .multi2 .most-champions__stats .game-count, .multi2 .recent-champions__stats .game-count,
+    .multi2 .most-champions__stats .win-ratio, .multi2 .recent-champions__stats .win-ratio{
+        color: hsl(207, 12%, 70%);
+    }
+    .multi2__recent-champion .toggle-button .slider {
+        background-color: hsl(206, 13%, 45%);
+    }
+    .multi2__recent-champion .toggle-button .slider:before {
+        background-color: #eee;
+    }
+    .multi2 .recent-matches .positions .position__info .win-rate {
+        color: hsl(221, 65%, 70%);
+    }
+    .multi2 .most-champions__stats .win-ratio .red, .multi2 .recent-champions__stats .win-ratio .red {
+        color: hsl(346, 70%, 55%);
+    }
+
+}
+
+@-moz-document regexp("https:\\/\\/.+\\.op\\.gg\\/champion\\/.+\\/statistics\\/.+") {
+/*     Champion */
+    .l-wrap.l-wrap--champion {
+        background-color: #121212;
+    }
+    .champion-overview__header,
+    .champion-box-header,
+    .champion-skill-build__table th{
+        background: #202020;
+        color: #b1b1b1;
+    }
+    .l-champion-statistics-menu,
+    .champion-stats-summary-rune__item{
+        background: #202020;
+    }
+    .champion-overview__sub-header,
+    .champion-stats-summary-rune__item.active{
+        background: #232323;
+    }
+    .champion-overview__header h2,
+    .champion-box-header__title h4,
+    .champion-overview__stats--pick strong,
+    .champion-stats-summary-ranking__table__summoner span,
+    .champion-stats-summary-ranking__table__gamecount b,
+    .champion-box--trend .champion-stats-trend-average,
+    .champion-overview__sub-header,
+    .champion-stats-summary-rune__name,
+    .champion-stats-summary-rune__rate strong, .champion-stats-summary-rune__rate span{
+        color: #d3d3d3;
+    }
+    .champion-overview__stats--pick span,
+    .champion-overview__stats--win strong,
+    .champion-stats-summary-ranking__table__gamecount,
+    .champion-stats-menu__list__item a,
+    .champion-stats-summary-rune__rate span,
+    .champion-skill-build__table td{
+        color: #b1b1b1;
+    }
+    .champion-overview__table,
+    .champion-box-content,
+    .champion-box{
+        background-color: #282828;
+        border: solid 1px #454545;
+    }
+    .champion-stats-summary-ranking__table tr,
+    .champion-skill-build__table td{
+        background-color: #282828;
+    }
+    .l-champion-statistics-menu,
+    .champion-overview__header,
+    .champion-overview__table.champion-overview__table--summonerspell tbody tr, .champion-overview__table.champion-overview__table--rune tbody tr,
+    .champion-overview__sub-header,
+    .champion-overview__border:before,
+    .champion-overview__row--first,
+    .champion-box-header,
+    .champion-box--trend .champion-stats-trend,
+    .champion-stats-summary-ranking__table tr,
+    .champion-stats-summary-rune__item,
+    .champion-skill-build__table th,
+    .champion-skill-build__table td{
+        border-color: #454545;
+    }
+
+}
