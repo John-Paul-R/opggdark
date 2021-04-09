@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         OP.GG Dark Mode
-@version      1.1.0
+@version      1.2.0
 @description A dark theme of OP.GG.
 @namespace    John-Paul-R
 @preprocessor uso
@@ -11,6 +11,7 @@
 @license GPL-3.0-or-later
 @var text backgroundImg "Background image URL: two double quotes for dndbeyond background choice, url for custom or blank for background color" ""
 @var color background "Background Color" "#121212"
+@var color opggColor "OPGG's Accent Color" "#293856"
 @var text filter "Icons filter - for dark backgrounds: invert(100%) for light background: none" "invert(100%)"
 @var text zindex "Z-index for dice: above 60001 for above results; below 60001 for below results" "60000"
 
@@ -588,7 +589,8 @@
     }
     .champion-overview__header,
     .champion-box-header,
-    .champion-skill-build__table th{
+    .champion-skill-build__table th,
+    .champion-stats__table__header{
         background: #202020;
         color: #b1b1b1;
     }
@@ -608,7 +610,12 @@
     .champion-box--trend .champion-stats-trend-average,
     .champion-overview__sub-header,
     .champion-stats-summary-rune__name,
-    .champion-stats-summary-rune__rate strong, .champion-stats-summary-rune__rate span{
+    .champion-stats-summary-rune__rate strong, .champion-stats-summary-rune__rate span,
+    .tablesorter-header-inner,
+    .champion-stats__single__item span,
+    .champion-stats__table__cell--pickrate em,
+    .champion-stats__filter__item__value span,
+    .champion-stats__filter__item.active > span{
         color: #d3d3d3;
     }
     .champion-overview__stats--pick span,
@@ -616,7 +623,9 @@
     .champion-stats-summary-ranking__table__gamecount,
     .champion-stats-menu__list__item a,
     .champion-stats-summary-rune__rate span,
-    .champion-skill-build__table td{
+    .champion-skill-build__table td,
+    .champion-stats__table__cell,
+    .champion-stats__filter__item__value b{
         color: #b1b1b1;
     }
     .champion-overview__table,
@@ -640,8 +649,31 @@
     .champion-stats-summary-ranking__table tr,
     .champion-stats-summary-rune__item,
     .champion-skill-build__table th,
-    .champion-skill-build__table td{
+    .champion-skill-build__table td,
+    .champion-stats__table__header{
         border-color: #454545;
     }
-
+    
+    .champion-stats-header__position--active,
+    .line-banner{
+        background-color: /*[[opggColor]]*/;
+    }
+    .champion-stats-header__tab__item.active {
+        background-color: #394660;
+        color: #d3d3d3;
+        border-color: #d3d3d3;
+    }
+    .champion-overview__header a > img,
+    .champion-box-header__link > img {
+        filter: brightness(40%) contrast(200%);
+    }
+    .champion-stats__table__cell,
+    .champion-stats__filter__item.active,
+    .champion-stats__filter__item--all{
+        background-color: #303030;
+    }
+    tr:nth-child(even) .champion-stats__table__cell,
+    .champion-stats__filter__item{
+        background-color: #2a2a2a;
+    }
 }
