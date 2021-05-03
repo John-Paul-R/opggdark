@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         OP.GG Dark Mode
-@version      1.3.0
+@version      1.3.1
 @description A dark theme of OP.GG.
 @namespace    John-Paul-R
 @preprocessor uso
@@ -133,7 +133,7 @@
             color: #b1b1b1;
         }
     }
-    @-moz-document regexp("https:\\/\\/.+\\.op\\.gg\\/summoner\\/userName=.+") {
+    @-moz-document regexp("https:\\/\\/.+\\.op\\.gg\\/summoner(\\/champions)?\\/userName=.+") {
     
     /*     Summoner */
     /* Background */
@@ -151,7 +151,7 @@
         .SummonerLayout>.Menu>.MenuList>.Item.inGame.active>a {
             background-color: /*[[background]]*/
         }
-        .SpectatorError {
+        .SpectatorError,.l-wrap.l-wrap--summoner {
             background-color: #282828;
             border-color: #333333;
         }
@@ -293,14 +293,18 @@
             background-color: hsl(0, 33%, 16%) !important;
             border-color: hsl(0, 33%, 35%) !important;
         }
+        .GameItem.Lose.Remake .Content {
+            background-color: hsl(0, 0%, 16%) !important;
+            border-color: hsl(0, 0%, 35%) !important;
+    
+        }
         .GameItem.Win .Content.tabItem.MatchDetailContent-overview,
         .GameItem.Win .Content,
         .GameItem.Win>.Content>.StatsButton{
             background-color: hsl(231, 33%, 16%) !important;
             border-color: hsl(231, 33%, 35%) !important;
         }
-        .GameItem.Lose.Remake .Content.tabItem.MatchDetailContent-overview,
-        .GameItem.Lose.Remake .Content {
+        .GameItem.Lose.Remake .Content.tabItem.MatchDetailContent-overview {
         background-color: #343434 !important;
     
         }
@@ -351,7 +355,7 @@
         color: #888;
         }
         .SpectateSummoner>.Box>.Content>.Table>.Body>.Row:nth-child(even)  {
-        background-color: #434343;
+        background-color: #282828;
         }
         .SpectateSummoner>.Box>.Content>.Table>.Body>.Row:nth-child(odd)  {
         background-color: #333333;
@@ -376,7 +380,8 @@
         .MatchBuild>.ItemBuild>.List>.Item>.Time,
         .GameItem>.Content>.KDA>.KDARatio,
         .ChampionStatsTable>.Body>.Row>.Cell.RatioGraph>.WinRatioGraph>.WinRatio,
-        .ChampionStatsTable>.Body>.Row>.Cell.Value{
+        .ChampionStatsTable>.Body>.Row>.Cell.Value,
+        .GameItem.Remake>.Content>.GameStats>.GameResult{
             color: #b1b1b1;
         }
         .GameDetailTable>.Content>.Row>.Cell.CS,
@@ -545,7 +550,8 @@
         .multi2__box>.content .content-title{
             color: #d3d3d3!important;
         }
-        .multi2__box>.content .content-subtitle {
+        .multi2__box>.content .content-subtitle,
+        .multi2__recent-champion .label{
             color: #b1b1b1;
         }
         
