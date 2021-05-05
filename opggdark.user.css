@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         OP.GG Dark Mode
-@version      1.3.1
+@version      1.3.2
 @description A dark theme of OP.GG.
 @namespace    John-Paul-R
 @preprocessor uso
@@ -175,6 +175,12 @@
             border: 1px solid hsl(180, 5%, 35%);
             box-shadow: 0 1px hsl(180, 4%, 28%);
         }
+        .opscore-banner__header {
+            background-color: #282828;
+        }
+        .opscore-banner__content-badge-description.ACE { 
+            color: hsl(289, 59%, 65%)
+        }
         .opscore-banner,
         .Button.White{
             border: 1px solid hsl(180, 5%, 35%);
@@ -198,9 +204,29 @@
         .Box>.Title {
             border-bottom: 1px solid hsl(180, 5%, 35%);
         }
-        .SummonerLayout>.Header>.PastRank>.PastRankList>.Item {
+        .SummonerLayout>.Header>.PastRank>.PastRankList>.Item,
+        .MatchBuild .Title,
+        .GameDetailTableWrap>.Summary,
+        .MatchDetailHeader ul li,
+        .MatchTeamAnalysisHeader ul li a,
+        .MatchTeamAnalysisHeader ul{
             background-color: #282828;
             color: #d3d3d3;
+            border-color: #454545;
+        }
+        .GameDetailTableWrap>.Summary>.Team>.ObjectScore, .GameDetailTableWrap>.Summary>.Team>.ObjectScore,
+        .summary-graph>.total--container>.text{
+            color: #d3d3d3;
+        }
+        .MatchDetailHeader ul li.active a,
+        .MatchDetailHeader ul li.active,
+        .GameItem.extended.Win>.GameDetail .MatchDetailHeader li.active a,
+        .GameItem.extended.Lose>.GameDetail .MatchDetailHeader li.active a{
+            background-color: #282828 !important;
+            color: #d3d3d3 !important;
+            border-color: #656565 !important;
+        }
+        .MatchDetailLayout .MatchDetailContent>.Content>div {
             border-color: #454545;
         }
     
@@ -289,7 +315,9 @@
     
         .GameItem.Lose .Content.tabItem.MatchDetailContent-overview,
         .GameItem.Lose .Content,
-        .GameItem.Lose>.Content>.StatsButton{
+        .GameItem.Lose>.Content>.StatsButton,
+        .GameItem.extended.Lose>.GameDetail .MatchDetailHeader .tabHeaders,
+        .GameItem.extended.Lose>.GameDetail .MatchDetailHeader li a {
             background-color: hsl(0, 33%, 16%) !important;
             border-color: hsl(0, 33%, 35%) !important;
         }
@@ -300,7 +328,9 @@
         }
         .GameItem.Win .Content.tabItem.MatchDetailContent-overview,
         .GameItem.Win .Content,
-        .GameItem.Win>.Content>.StatsButton{
+        .GameItem.Win>.Content>.StatsButton,
+        .GameItem.extended.Win>.GameDetail .MatchDetailHeader li a,
+        .GameItem.extended.Win>.GameDetail .MatchDetailHeader .tabHeaders{
             background-color: hsl(231, 33%, 16%) !important;
             border-color: hsl(231, 33%, 35%) !important;
         }
@@ -398,7 +428,8 @@
         .ChampionStatsTable>.Body>.Row>.Cell.KDA>.KDA,
         .ChampionStatsTable>.Body>.Row>.Cell.ChampionName>a, .ChampionStatsTable>.Body>.Row>.Cell.ChampionName, .ChampionStatsTable>.Body>.Row>.Cell,
         .ChampionStatsTable>.Header>.Row>.HeaderCell,
-        .opscore-banner__header{
+        .opscore-banner__header,
+        .GameItem.extended>.GameDetail .MatchDetailHeader li a{
             color: #d3d3d3;
         }
         .opscore-banner__content {
@@ -414,6 +445,33 @@
         }
     /*     .GameDetailTableWrap>.Summary {} */
         
+    }
+    .GameListContainer>.Header>.Navigation>.Actions>.Action>.ChampionMatchSearchWrap>.Content>.SelectMatchChampionList>.Item.Recent {
+        background-color: #353535f4;
+        border-color: #656565;
+    }
+    .GameListContainer>.Header>.Navigation>.Actions>.Action>.ChampionMatchSearchWrap>.Content>.SelectMatchChampionList>.Item.All {
+        background-color: #282828f5;
+        border-color: #656565;
+    }
+    .GameListContainer>.Header>.Navigation>.Actions>.Action>.ChampionMatchSearchWrap>.Content>.SelectMatchChampionList>.Item>.Header {
+        border-color: #656565;
+    }
+    
+    .highcharts-container > svg {
+        background-color: #282828;
+    }
+    .highcharts-container > svg > path {
+        fill: #323232 !important;
+    }
+    .highcharts-container div b{
+        color: #d3d3d3 !important;
+    }
+    .highcharts-container div {
+        color: #b3b3b3;
+    }
+    g.highcharts-axis > path {
+        stroke: #454545 !important;
     }
     
     @-moz-document regexp("https:\\/\\/.+\\.op\\.gg\\/(champion|aram|urf)\\/statistics") {
