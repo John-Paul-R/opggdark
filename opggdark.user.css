@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         OP.GG Dark Mode
-@version      1.4.0
+@version      1.4.1
 @description A dark theme of OP.GG.
 @namespace    John-Paul-R
 @preprocessor uso
@@ -317,7 +317,8 @@
     .GameItem.Lose .Content,
     .GameItem.Lose>.Content>.StatsButton,
     .GameItem.extended.Lose>.GameDetail .MatchDetailHeader .tabHeaders,
-    .GameItem.extended.Lose>.GameDetail .MatchDetailHeader li a {
+    .GameItem.extended.Lose>.GameDetail .MatchDetailHeader li a,
+    .GameItem.extended.Lose>.Content>div{
         background-color: hsl(0, 33%, 16%) !important;
         border-color: hsl(0, 33%, 30%) !important;
     }
@@ -330,7 +331,8 @@
     .GameItem.Win .Content,
     .GameItem.Win>.Content>.StatsButton,
     .GameItem.extended.Win>.GameDetail .MatchDetailHeader li a,
-    .GameItem.extended.Win>.GameDetail .MatchDetailHeader .tabHeaders{
+    .GameItem.extended.Win>.GameDetail .MatchDetailHeader .tabHeaders,
+    .GameItem.extended.Win>.Content>div{
         background-color: hsl(231, 33%, 16%) !important;
         border-color: hsl(231, 33%, 35%) !important;
     }
@@ -912,5 +914,8 @@ g.highcharts-axis > path {
     .ranking-summary-summoner-footer {
         border-color: #454545;
     }
-
+/*     
+    .Box>.Title+.Content.statsLeagueBox, .Box>.Navigation+.Content {
+        background: /*[[element1]
+    } */
 }
